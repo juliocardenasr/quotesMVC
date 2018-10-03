@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="ico" href="favicon.ico">
+    <link rel="stylesheet" href="css/frasesCelebres.css">
+    <script src="js/frasesCelebres.js"></script>
     <title>Sitio4</title>
 </head>
 <body>
     <h1>Bienvenido al sitio 4</h1>
+    <img src="img/fraseDelDia.jpg" alt="frase del dia" width="100">
+    <input type="button" id="btFrase" class="btfrase"
+        value="traer frase del dia"
+        onclick="traerFrase()">
+    <div class="cartelera" id="cartelera">
+        <textarea name="frase" id="frase" cols="50" rows="10"></textarea>
+        <textarea name="autor" id="autor" rows="1" cols="50"></textarea>
+    </div>
+    <footer>Pagina desarrollada por Julio Cardenas</footer>
 </body>
 </html>
-
