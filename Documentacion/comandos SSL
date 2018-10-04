@@ -1,0 +1,8 @@
+for i in {1..7}; do mkdir -p "/var/www/sitio$i.com/public/"; done
+
+
+for i in {1..7}; do cp favicon$i.ico /var/www/sitio$i.com/public/favicon.ico; done
+
+for i in {1..7}; do sudo openssl genrsa -out sitio$i.com.key 4096; done
+for i in {1..7}; do sudo openssl req -new -key sitio$i.com.key -out sitio$i.com.csr; done
+for i in {1..7}; do sudo openssl x509 -req -days 365 -in sitio$i.com.csr -signkey sitio$i.com.key -out sitio$i.com.crt; done

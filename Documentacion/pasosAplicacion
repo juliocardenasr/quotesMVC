@@ -1,0 +1,37 @@
+Base de Datos:
+	Escoger 23 frases celebres y salvarlas en un archivo
+	editar el archivo en CSV (comma separated values)
+	Crear una base de datos
+		create database panneton;
+	crear la tabla en la base de datos
+		create table FrasesCelebres (id int not null auto_increment,frase varchar(250) not null, autor varchar(50) not null, primary key (id));
+	cargar en la base de datos:
+		load data local infile '/home/julio/Documents/frasesCelebres.txt' into table FrasesCelebres fields terminated by ',' enclosed by '"' lines terminated by '\n' (frase, autor);
+
+php
+	crear archivo de configuracion
+	crear php de conexion a la base de datos
+	crear php que genere un numero al azar, consulte el registro y lo devuelva en JSON
+	
+html 
+    pagina mostrando el bienvenido a pagina 4
+    boton traer frase del dia
+    text area para mostrarla
+    
+css 
+    modificacion del fondo
+    modificacion del boton
+    centrado de los elementos
+    
+javascript
+    funcion que atienda al boton.
+    fetch que llame al php que trae la frase diaria
+    fetch.then que muestre la frase del dia y el autor.
+    fetch. catch que muestre los posibles errores        		
+
+so
+    crear los directorios pertinentes
+    ajustar los permisos de ser necesario
+       
+git
+    emplear el git para el control del progreso    
