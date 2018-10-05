@@ -1,0 +1,45 @@
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install apache2
+http://localhost
+
+sudo systemctl stop apache2.service
+sudo systemctl start apache2.service
+sudo systemctl enable apache2.service
+
+sudo apt-get install mariadb-server mariadb-client
+
+sudo systemctl stop mariadb.service
+sudo systemctl start mariadb.service
+sudo systemctl enable mariadb.service
+
+sudo mysql_secure_installation
+
+Enter current password for root (enter for none): Just press the Enter
+Set root password? [Y/n]: Y
+New password: Enter password
+Re-enter new password: Repeat password
+Remove anonymous users? [Y/n]: Y
+Disallow root login remotely? [Y/n]: Y
+Remove test database and access to it? [Y/n]:  Y
+Reload privilege tables now? [Y/n]:  Y
+
+sudo apt-get install software-properties-common
+
+
+sudo apt install ca-certificates apt-transport-https
+wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+
+sudo apt-get upgrade
+sudo apt-get install php7.2
+
+sudo apt install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-mysql php7.2-xml
+sudo apt install php7.2 libapache2-mod-php7.2 php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
+sudo systemctl restart apache2.service
+
+sudo nano /var/www/html/phpinfo.php
+<?php phpinfo( ); ?>
+
+http://localhost/phpinfo.php

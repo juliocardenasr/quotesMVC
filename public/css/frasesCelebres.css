@@ -1,3 +1,25 @@
 body {
     background-color: rgb(24, 245, 245);
 }
+h1 {
+    text-align:  center;
+}
+h3 {
+    text-align: center
+}
+img {
+    display: block;
+    margin: auto;
+}
+textarea {
+    display: block;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.btfrase {
+    display:block;
+    margin: 20px auto 20px auto;
+    padding: 5px;
+    border-radius: 3px;
+}

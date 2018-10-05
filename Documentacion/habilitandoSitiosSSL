@@ -1,0 +1,26 @@
+sudo mkdir /etc/apache2/ssl
+cd /etc/apache2/ssl
+
+sudo openssl genrsa -out sitio1.com.key 4096
+sudo openssl genrsa -out sitio2.com.key 4096
+sudo openssl genrsa -out sitio3.com.key 4096
+sudo openssl genrsa -out sitio4.com.key 4096
+sudo openssl genrsa -out sitio5.com.key 4096
+sudo openssl genrsa -out sitio6.com.key 4096
+sudo openssl genrsa -out sitio7.com.key 4096
+
+sudo openssl req -new -key sitio1.com.key -out sitio1.com.csr -sha512
+sudo openssl req -new -key sitio2.com.key -out sitio2.com.csr -sha512
+sudo openssl req -new -key sitio3.com.key -out sitio3.com.csr -sha512
+sudo openssl req -new -key sitio4.com.key -out sitio4.com.csr -sha512
+sudo openssl req -new -key sitio5.com.key -out sitio5.com.csr -sha512
+sudo openssl req -new -key sitio6.com.key -out sitio6.com.csr -sha512
+sudo openssl req -new -key sitio7.com.key -out sitio7.com.csr -sha512
+
+sudo openssl x509 -req -days 365 -in sitio1.com.csr -signkey sitio1.com.key -out sitio1.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio2.com.csr -signkey sitio2.com.key -out sitio2.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio3.com.csr -signkey sitio3.com.key -out sitio3.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio4.com.csr -signkey sitio4.com.key -out sitio4.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio5.com.csr -signkey sitio5.com.key -out sitio5.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio6.com.csr -signkey sitio6.com.key -out sitio6.com.crt -sha512
+sudo openssl x509 -req -days 365 -in sitio7.com.csr -signkey sitio7.com.key -out sitio7.com.crt -sha512
