@@ -9,7 +9,7 @@ function traerFrase () {
       document.getElementById('frase').innerHTML = data.frase
       document.getElementById('autor').innerHTML = data.autor
     })
-    .catch(function(error) {
-        Error(error)
+    .catch(function (error) {
+      Error(error)
     })
 }
