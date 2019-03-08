@@ -1,22 +1,23 @@
 <?php
     class EntityBase {
-    	private $table, $db, $connectDB;
+    	  protected $table, $db;
+        private   $connectDB;
 
-    	public function __construct($table) {
-    	    $this->table = (string) $table;
+    	  public function __construct($table) {
+    	      $this->table = (string) $table;
 
             require_once '../Core/ConnectDB.php';
             $this->connectDB = new ConnectDB();
             $this->db = $this->connectDB->connection();
-    	}
+    	  }
 
-    	public function getConnectDB() {
-    	    return $this->connectDB;
-    	}
+    	  public function getConnectDB() {
+    	      return $this->connectDB;
+    	  }
 
-    	public function db() {
-    	    return $this->db;
-    	}
+    	  public function db() {
+    	      return $this->db;
+    	  }
 
         public function getRowsCount() {
             $query = $this->db->query("SELECT COUNT(*) as count FROM $this->table");
@@ -24,22 +25,22 @@
             return $row->count;
         }
 
-    	public function getAll() {
-    	    $query = $this->db->query("SELECT * FROM $this->table ORDER BY id DESC");
+    	  public function getAll() {
+    	      $query = $this->db->query("SELECT * FROM $this->table ORDER BY id DESC");
             while ($row = $query->fetch_object()) {
                 $resultSet[] = $row;
             }
             return $resultSet;
-    	}
+      	}
 
-    	public function getById($id) {
-    		$query = $this->db->query("SELECT * FROM $this->table WHERE id=$id");
+    	  public function getById($id) {
+    		    $query = $this->db->query("SELECT * FROM $this->table WHERE id=$id");
 
-    		if ($row=$query->fetch_object()) {
-                    $resultSet = $row;
-                    return $resultSet;
-    		}
-    	}
+    		    if ($row=$query->fetch_object()) {
+                $resultSet = $row;
+                return $resultSet;
+    		    }
+    	  }
 
     	public function getBy($column, $value){
             $query = $this->db->query("SELECT * FROM $this->table WHERE $column=$value");

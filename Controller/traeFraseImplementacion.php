@@ -1,15 +1,15 @@
 <?php
 
 
-    require_once '../Core/EntityBase.php';
+    require_once '../Model/ModelFrasesCelebres.php';
 
-    $fraseEB = new EntityBase("FrasesCelebres");
+    $fraseMFC = new ModelFrasesCelebres();
 
-    $maximo = $fraseEB->getRowsCount();
+    $maximo = $fraseMFC->getRowsCount();
 
     $indiceFrase = rand(0, $maximo-1);
 
-    $respuesta = $fraseEB->getRows(1,$indiceFrase);
+    $respuesta = $fraseMFC->getRows(1,$indiceFrase);
 
     $respuestaJSON = json_encode($respuesta[0]);
     echo $respuestaJSON;
