@@ -2,11 +2,16 @@
     class FrasesController extends ControllerBase {
         public  function __construct() {
             parent::__construct();
-            echo "<br> desde FrasesController";
         }
 
         public function show() {
-            echo "Esta es la funcion show <br>";
+            $fraseMFC = new ModelFrasesCelebres();
+            $maximo = $fraseMFC->getRowsCount();
+            $indiceFrase = rand(0, $maximo-1);
+            $respuesta = $fraseMFC->getRows(1,$indiceFrase);
+            $this->view('show',array('title' => 'Frase del Dia',
+                                     'frase' => $respuesta[0]->frase,
+                                     'autor' => $respuesta[0]->autor));
         }
 
         public function accionA() {

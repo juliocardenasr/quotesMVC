@@ -4,7 +4,6 @@
 
 
     if (isset($_GET['controller'])) {
-        echo "loading the controller" . $_GET['controller'] . "<br>";
         $controllerObj = loadController($_GET['controller']);
     } else {
         $controllerObj = loadController(DEFAULT_CONTROLLER);

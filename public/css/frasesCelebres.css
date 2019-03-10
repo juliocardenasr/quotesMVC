@@ -17,9 +17,15 @@ textarea {
     margin-bottom: 10px;
 }
 
-.btfrase {
-    display:block;
+.afrase {
+    display: block;
     margin: 20px auto 20px auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.bfrase {
+    display:block;
     padding: 5px;
     border-radius: 3px;
 }
