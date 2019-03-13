@@ -1,31 +1,8 @@
 body {
-    background-color: rgb(24, 245, 245);
+    background-color: rgb(204, 236, 239);
 }
 
-/*
-****************************************************************
-*  Reparticion basado en grid. Mobile first
-****************************************************************
-*/
 
-.grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-        grid-column-gap: 15px;
-        grid-row-gap: 30px;
-	grid-template-areas:
-	    "title   title"
-	    "header  header"
-	    "aside   aside"
-      "main    main"
-	    "footer  footer";
-}
-.title {
-	grid-area: title;
-}
-.header {
-	grid-area: header;
-}
 .aside {
 	grid-area: aside;
 }
@@ -34,19 +11,7 @@ body {
 }
 .footer {
 	grid-area: footer;
-
 }
-@media screen and (min-width: 736px) {
-	.grid {
-	    display: grid;
-	    grid-template-columns: repeat(5, 1fr);
-      grid-row-gap: 5px;
-	    grid-template-areas:
-	        "title   title   title   title   title "
-	        "header  header  header  header  header "
-	        "aside   main    main    main    . "
-	        "footer  footer  footer  footer  footer ";
-    }
 
 
 /*
@@ -66,6 +31,7 @@ body {
 */
 .title {
 	height: 110px;
+  grid-area: title;
 }
 
 .title hgroup {
@@ -95,12 +61,15 @@ body {
 */
 .header {
   height: 50px;
+  position: relative;
+  grid-area: header;
 }
 
 .header img {
 	height: 100px;
-  margin-bottom: 50px;
-	float: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 nav ul {
@@ -123,7 +92,22 @@ nav ul li a:hover {
 	color: white;
 	background-color: black;
 }
+/*
+********************************************************************************
+*
+********************************************************************************
+*/
+.iconbar {
+    padding: 1px 10%;
+}
+.iconbar img {
+     width: 30px;
+}
 
+.iconbar ul li {
+	display: inline-block;
+	margin-left: 20px;
+}
 
 .afrase {
     display: block;
@@ -153,3 +137,34 @@ textarea {
     margin:auto;
     margin-bottom: 10px;
 }
+
+
+/*
+****************************************************************
+*  Reparticion basado en grid. Mobile first
+****************************************************************
+*/
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 30px;
+	grid-template-areas:
+	    "title   title"
+	    "header  header"
+	    "aside   aside"
+      "main    main"
+	    "footer  footer";
+}
+
+@media screen and (min-width: 736px) {
+	.grid {
+	    display: grid;
+	    grid-template-columns: repeat(5, 1fr);
+      grid-row-gap: 5px;
+	    grid-template-areas:
+	        "title   title   title   title   title "
+	        "header  header  header  header  header "
+	        "aside   main    main    main    . "
+	        "footer  footer  footer  footer  footer ";
+    }

@@ -11,6 +11,13 @@
           <textarea name="frase" id="frase" cols="50" rows="10"><?php echo $frase; ?></textarea>
           <textarea name="autor" id="autor" rows="1" cols="50"><?php echo $autor; ?></textarea>
         </div>
+        <div class="iconbar">
+          <ul>
+            <li><a href=""><img src="img/create.png" alt=""></a></li>
+            <li><a href=""><img src="img/delete.png" alt=""></a></li>
+            <li><a href=""><img src="img/edit.png" alt=""></a></li>
+          </ul>
+        </div>
       </main>
     </div>
 <?php
